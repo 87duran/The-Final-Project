@@ -1,0 +1,19 @@
+{
+  "name": "gameMobServer",
+  "version": "1.0.0",
+  "description": "server for my gameMob users and data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "cors": "^2.5.2",
+    "express": "^4.10.2",
+    "pg": "^3.6.3",
+    "sequelize": "^2.0.0-rc2"
+  }
+}

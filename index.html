@@ -1,0 +1,36 @@
+<html ng-app='GameMob'>
+<head>
+    <link rel="'stylesheet" type="text/css" href="Styles/styles.css">
+    <title>My Final Project</title>
+</head>
+<body ng-controller="MainController">
+    <h1>This is my final project!</h1>
+    {{test}}
+    <a ng-href='#/'>Main</a>
+    <a ng-href="#/signup">Sign Up</a>
+    <a ng-href="#/userHome">User Home</a>
+    <a ng-href="#/search">Open Search</a>
+    <div>
+
+        <select name="GameMobUsers" ng-model="selectedUser" ng-options="user.user_id for user in gameMob_users" ng-change="changeToUser()">Select a User</select>
+
+    </div>
+
+    <div ui-view>
+
+    </div>
+
+
+
+
+    <!-- Angular JS -->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+    <script src="public/app/app.js"></script>
+    <script src="public/app/MainController.js"></script>
+    <script src="public/app/mainService.js"></script>
+
+
+</body>
+
+</html>
