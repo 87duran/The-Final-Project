@@ -11,4 +11,25 @@
 
         </h5>
 
-        Member Since : {{currentUser.sign_up_date}}
+        Member Since : {{currentUser.createdAt | date}}
+        <br>
+
+<form>
+    <h2>Create a game session for others to join!</h2>
+    <h4>What game do you want to play?</h4>
+    <input placeholder="Session Game" name="SessionGame" ng-model="test_session.game">
+    <br>
+    <h4>When do you want to play?</h4>
+    <input placeholder="Session Date" name="SessionDate" ng-model="test_session.date">
+    <br>
+    <h4>What skill level would you prefer to play with?</h4>
+    <input placeholder="Preferred Skill Level" name="SkillLevel" ng-model="test_session.skill_level">
+    <br>
+    <h4>What time do you want to start?</h4>
+    <input placeholder="Time of Session" name="SessionTime" ng-model="test_session.time">
+    <br>
+        <hr>
+        <button type="submit" ng-click="submitSession()">Create your session!</button>
+        </hr>
+
+</form>
