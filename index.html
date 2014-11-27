@@ -1,34 +1,55 @@
 <html ng-app='GameMob'>
 <head>
-    <link rel="'stylesheet" type="text/css" href="Styles/styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <title>My Final Project</title>
 </head>
 <body ng-controller="MainController">
-    <h1>This is my final project!</h1>
-    {{test}}
-    <a ng-href='#/'>Main</a>
-    <a ng-href="#/signup">Sign Up</a>
-    <a ng-href="#/userHome">User Home</a>
-    <a ng-href="#/search">Open Search</a>
-    <div>
+    <header>
+    <h1>GamerMob</h1>
 
-        <select name="GameMobUsers" ng-model="selectedUser" ng-options="user.user_id for user in gameMobtest_users" ng-change="changeToUser()">Select a User</select>
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li role="presentation" ><a ng-href='#/'>Main</a></li>
+                <li role="presentation" ><a ng-href="#/signup">Sign Up</a></li>
+                <li role="presentation"><a ng-href="#/userHome">User Home</a></li>
+                <li role="presentation"><a ng-href="#/search">Open Search</a></li>
+                <p class="navbar-text navbar-right">Signed in as {{currentUser.user_id}}</p>
+            </ul>
+        </nav>
+        <div>
+
 
     </div>
-
+    </header>
     <div ui-view>
 
     </div>
 
+    <select name="GameMobUsers" ng-model="selectedUser" ng-options="user.user_id for user in gameMobtest_users" ng-change="changeToUser()">
+        Select a User
+    </select>
 
 
 
     <!-- Angular JS -->
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js'></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--Firebase and AngularFire-->
+    <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
+    <!--BootStrap-->
+    <script src="dist/js/bootstrap.min.js"></script>
     <script src="public/app/app.js"></script>
     <script src="public/app/MainController.js"></script>
     <script src="public/app/mainService.js"></script>
+    <script src="public/app/DateController.js"></script>
 
 
 </body>

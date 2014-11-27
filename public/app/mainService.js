@@ -28,7 +28,7 @@ app.service('mainService', function($http) {
     }
 
     this.addNewSession = function(test_session, callback) {
-        console.log('new session function')
+        console.log('new session function');
         return $http.post('http://localhost:3000/sessions', {test_session: test_session})
             .success(function(data, status, headers, config){
                 console.log(data);

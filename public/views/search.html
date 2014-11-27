@@ -1,9 +1,15 @@
 <h3>Search for Sessions</h3>
 
-        <input>
-        <button></button>
-        <div ng-repeat="users in gameMobtest_users">
-            {{users}}
-            {{sessions}}
+
+        <div>
+            Search by Date, Game, Start Time or Skill Level Here: <input ng-model="search">
+            <div ng-repeat='session in test_sessions | filter:search'>
+                <ul>
+                    <li> Date of Session: {{session.date}}</li>
+                    <li> Game: {{session.game}}</li>
+                    <li> Start Time {{session.time}}</li>
+                    <li> Skill Level: {{session.skill_level}}</li>
+                </ul>
+            </div>
 
         </div>

@@ -1,4 +1,4 @@
-var app = angular.module('GameMob', ['ui.router']);
+var app = angular.module('GameMob', ['ui.router', "firebase"]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -23,4 +23,4 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'public/views/search.html',
                 controller: 'MainController'
             })
-})
+});

@@ -1,6 +1,6 @@
 var app = angular.module('GameMob');
 
-app.controller('MainController', function($scope, mainService) {
+app.controller('MainController', function($scope, $firebase, mainService) {
    $scope.gameMobtest_users = [];
    $scope.getListofUsers = function() {
       mainService.getListofUsers().then(function(data) {
@@ -15,7 +15,6 @@ app.controller('MainController', function($scope, mainService) {
       for (var i = 0; i < $scope.gameMobtest_users.length; i++) {
          if ($scope.gameMobtest_users[i].user_id === $scope.selectedUser.user_id) {
              $scope.currentUser = $scope.gameMobtest_users[i];
-            console.log(x);
             break;
          } else {
             console.log('didnt work')
@@ -27,9 +26,9 @@ app.controller('MainController', function($scope, mainService) {
    $scope.test = 'this test is working';
    $scope.submitForm = function() {
       mainService.addNewUser($scope.gameMobtest_user, function(data) {
-         $scope.gameMobtest_users = data;
+         //$scope.gameMobtest_user = data;
       })
-   }
+   };
 
 
 
@@ -42,9 +41,34 @@ app.controller('MainController', function($scope, mainService) {
 
    $scope.getListofsessions();
 
-   $scope.submitSession = function() {
+    //$scope.test_session.createdBy = $scope.currentUser.user_id;
+
+    $scope.submitSession = function() {
       mainService.addNewSession($scope.test_session, function(data) {
-         $scope.test_sessions = data;
+          console.log("i'm here");
+
       })
-   }
+    };
+    var ref = new Firebase("https://gamermobmessages.firebaseio.com/");
+    // GET MESSAGES AS AN ARRAY
+    $scope.messages = $firebase(ref).$asArray();
+
+    //ADD MESSAGE METHOD
+    $scope.addMessage = function(e) {
+
+        //LISTEN FOR RETURN KEY
+        if (e.keyCode === 13 && $scope.msg) {
+            //ALLOW CUSTOM OR ANONYMOUS USER NAMES
+            var name = $scope.name || 'anonymous';
+
+            //ADD TO FIREBASE
+            $scope.messages.$add({
+                from: name,
+                body: $scope.msg
+            });
+
+            //RESET MESSAGE
+            $scope.msg = "";
+        }
+    }
 });

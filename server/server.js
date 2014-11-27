@@ -34,10 +34,11 @@ var User = sequelize.define('gameMobtest_users', {
 });
 
 var Session = sequelize.define('test_sessions', {
+    createdBy: Sequelize.STRING,
     game: Sequelize.STRING,
     date: Sequelize.STRING,
     skill_level: Sequelize.STRING,
-    time: Sequelize.STRING,
+    time: Sequelize.STRING
 }, {
     tableName: 'test_sessions', // this will define the table's name
     timestamps: true           // this will deactivate the timestamp columns
@@ -88,6 +89,7 @@ app.post('/sessions', function(req,res) {
     var test_session = req.body.test_session;
     console.log(test_session);
     Session.create({
+        createdBy: test_session.createdBy,
         game: test_session.game,
         date: test_session.date,
         skill_level: test_session.skill_level,
