@@ -18,7 +18,7 @@
                 <li role="presentation" ><a ng-href="#/signup">Sign Up</a></li>
                 <li role="presentation"><a ng-href="#/userHome">User Home</a></li>
                 <li role="presentation"><a ng-href="#/search">Open Search</a></li>
-                <p class="navbar-text navbar-right">Signed in as {{currentUser.user_id}}</p>
+                <p class="navbar-text navbar-right">Signed in as {{selectedUser.user_id}}</p>
             </ul>
         </nav>
         <div>
@@ -30,8 +30,9 @@
 
     </div>
 
-    <select name="GameMobUsers" ng-model="selectedUser" ng-options="user.user_id for user in gameMobtest_users" ng-change="changeToUser()">
-        Select a User
+    <select name="GameMobUsers" ng-model="selectedUser" ng-options="user.user_id for user in gameMobtest_users" >
+
+
     </select>
 
 
@@ -45,11 +46,13 @@
     <script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
     <!--BootStrap-->
-    <script src="dist/js/bootstrap.min.js"></script>
+    <!--<script src="dist/js/bootstrap.min.js"></script>-->
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
     <script src="public/app/app.js"></script>
-    <script src="public/app/MainController.js"></script>
+    <script src="public/controllers/MainController.js"></script>
     <script src="public/app/mainService.js"></script>
-    <script src="public/app/DateController.js"></script>
+    <script src="public/controllers/DateController.js"></script>
+    <script src="public/controllers/TimeController.js"></script>
 
 
 </body>

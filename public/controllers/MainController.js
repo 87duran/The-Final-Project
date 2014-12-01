@@ -10,18 +10,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
    $scope.getListofUsers();
 
-   $scope.changeToUser = function(){
-      var x = $scope.currentUser;
-      for (var i = 0; i < $scope.gameMobtest_users.length; i++) {
-         if ($scope.gameMobtest_users[i].user_id === $scope.selectedUser.user_id) {
-             $scope.currentUser = $scope.gameMobtest_users[i];
-            break;
-         } else {
-            console.log('didnt work')
-         }
-      }
-   };
-  // $scope.changeToUser();
+
 
    $scope.test = 'this test is working';
    $scope.submitForm = function() {
@@ -59,7 +48,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
         //LISTEN FOR RETURN KEY
         if (e.keyCode === 13 && $scope.msg) {
             //ALLOW CUSTOM OR ANONYMOUS USER NAMES
-            var name = $scope.name || 'anonymous';
+            var name = $scope.name || $scope.selectedUser.user_id;
 
             //ADD TO FIREBASE
             $scope.messages.$add({
