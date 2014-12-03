@@ -4,6 +4,11 @@ var app = express();
 var cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(__dirname));
+
+app.get('/', function(req, res) {
+    res.sendFile('/index.html',  { root: __dirname })
+});
 
 var Sequelize = require('sequelize')
     , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
