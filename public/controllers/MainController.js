@@ -16,7 +16,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
     $scope.submitForm = function() {
       mainService.addNewUser($scope.gameMobtest_user, function(data) {
-         //$scope.gameMobtest_user = data;
+         $scope.getListofUsers();
       })
    };
 

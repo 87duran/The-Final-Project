@@ -1,4 +1,5 @@
 <div class="container">
+    <div class="row">
     <div>
         <h3>Welcome back {{selectedUser.user_id}}</h3>
         <br>
@@ -7,9 +8,9 @@
         First Name : {{selectedUser.first_name}}
         <br>
         Last Name : {{selectedUser.last_name}}
-
-        Member Since : {{selectedUser.createdAt | date}}
         <br>
+        Member Since : {{selectedUser.createdAt | date}}
+
     </div>
 
     <form>
@@ -29,8 +30,8 @@
             <h4>When do you want to play?</h4>
             <!--<input placeholder="Session Date" name="SessionDate" ng-model="test_session.date">-->
 
-            <div class="row">
-                <div class="col-md-2">
+            <div class="col-md-2">
+                <div>
                     <p class="input-group">
                         <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="test_session.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
@@ -65,7 +66,7 @@
             <button type="submit" ng-click="submitSession()">Create your session!</button>
 
     </form>
-            <div>
+            <div class="col-lg-8">
                 <ul id='example-messages' class='example-chat-messages'>
                     <li ng-repeat='msg in messages'>
                         <strong class='example-chat-username'>{{msg.from}}</strong>
@@ -76,5 +77,6 @@
                     <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>
                 </footer>
 
+        </div>
         </div>
 </div>
