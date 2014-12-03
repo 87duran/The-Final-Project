@@ -3,13 +3,21 @@
 
         <div>
             Search by Date, Game, Start Time or Skill Level Here: <input ng-model="search">
-            <div ng-repeat='session in test_sessions | filter:search'>
-                <ul>
-                    <li> Date of Session: {{session.date | date: 'shortDate'}}</li>
-                    <li> Game: {{session.game}}</li>
-                    <li> Start Time {{session.time | date: 'shortTime'}}</li>
-                    <li> Skill Level: {{session.skill_level}}</li>
-                </ul>
+            <div>
+                <table class="table table-striped">
+                    <tr class="success">
+                        <th>Date of Session</th>
+                        <th> Game</th>
+                        <th> Start Time</th>
+                        <th> Skill Level</th>
+                    </tr>
+                    <tr ng-repeat='session in test_sessions | filter:search'>
+                        <td>{{session.date | date: 'shortDate'}}</td>
+                        <td>{{session.game}}</td>
+                        <td>{{session.time | date: 'shortTime'}}</td>
+                        <td>{{session.skill_level}}</td>
+                    </tr>
+                </table>
             </div>
 
         </div>

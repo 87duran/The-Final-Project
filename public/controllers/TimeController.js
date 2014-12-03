@@ -4,7 +4,7 @@ app.controller('TimeController', function ($scope, $log) {
     //$scope.mytime = new Date();
 
     $scope.hstep = 1;
-    $scope.mstep = 15;
+    $scope.mstep = 1;
 
 
 
@@ -17,14 +17,14 @@ app.controller('TimeController', function ($scope, $log) {
         var d = new Date();
         d.setHours( 14 );
         d.setMinutes( 0 );
-        $scope.mytime = d;
+        $scope.test_session.time = d;
     };
 
     $scope.changed = function () {
         $log.log('Time changed to: ' + $scope.test_session.time);
     };
 
-    //$scope.clear = function() {
-    //    $scope.test_session.time = null;
-    //};
+    $scope.clear = function() {
+        $scope.test_session.time = null;
+    };
 });

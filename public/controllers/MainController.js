@@ -13,7 +13,8 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
 
    $scope.test = 'this test is working';
-   $scope.submitForm = function() {
+
+    $scope.submitForm = function() {
       mainService.addNewUser($scope.gameMobtest_user, function(data) {
          //$scope.gameMobtest_user = data;
       })
@@ -38,6 +39,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
       })
     };
+
     var ref = new Firebase("https://gamermobmessages.firebaseio.com/");
     // GET MESSAGES AS AN ARRAY
     $scope.messages = $firebase(ref).$asArray();
