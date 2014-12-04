@@ -10,6 +10,22 @@ app.get('/', function(req, res) {
     res.sendFile('/index.html',  { root: __dirname })
 });
 
+app.set('port', (process.env.PORT || 5000));
+
+var pg = require('pg');
+
+app.get('/db', function (request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query('SELECT * FROM test_table', function(err, result) {
+            done();
+            if (err)
+            { console.error(err); response.send("Error " + err); }
+            else
+            { response.send(result.rows); }
+        });
+    });
+})
+
 var Sequelize = require('sequelize')
     , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
         dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
@@ -109,5 +125,10 @@ app.post('/sessions', function(req,res) {
         });
 });
 
+app.listen(app.get('port'), function() {
+    console.log("Node app is running at localhost:" + app.get('port'));
+});
 
-app.listen(3000);
+
+
+//app.listen(3000);

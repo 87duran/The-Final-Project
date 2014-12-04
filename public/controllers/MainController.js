@@ -16,8 +16,8 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
     $scope.submitForm = function() {
       mainService.addNewUser($scope.gameMobtest_user, function(data) {
-         $scope.getListofUsers();
       })
+        $scope.getListofUsers();
    };
 
 
@@ -31,11 +31,11 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
    $scope.getListofsessions();
 
-    //$scope.test_session.createdBy = $scope.currentUser.user_id;
 
     $scope.submitSession = function() {
       mainService.addNewSession($scope.test_session, function(data) {
           console.log("i'm here");
+          //$scope.test_session.createdBy = $scope.selectedUser.user_id;
 
       })
     };
