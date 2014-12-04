@@ -27,7 +27,7 @@ app.get('/db', function (request, response) {
 })
 
 var Sequelize = require('sequelize')
-    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
+    , sequelize = new Sequelize('test', 'bcrxsnsafxlgmx', 'rp9z6Uf26kHtlE-AdQbmf_foL2', {
         dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
         port:    5432
     });
