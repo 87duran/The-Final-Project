@@ -15,9 +15,10 @@ app.controller('TimeController', function ($scope, $log) {
 
     $scope.update = function() {
         var d = new Date();
-        d.setHours( 15 );
+        d.setHours( 14 );
         d.setMinutes( 0 );
         $scope.test_session.time = d;
+        return d;
     };
 
     $scope.changed = function () {

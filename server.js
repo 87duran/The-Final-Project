@@ -48,7 +48,8 @@ var User = sequelize.define('gameMobtest_users', {
     user_id: Sequelize.STRING,
     first_name: Sequelize.STRING,
     last_name: Sequelize.STRING,
-    console: Sequelize.STRING
+    console: Sequelize.STRING,
+    skill_level: Sequelize.STRING
 }, {
     tableName: 'gamemobtest_users', // this will define the table's name
     timestamps: true           // this will deactivate the timestamp columns
@@ -59,7 +60,8 @@ var Session = sequelize.define('test_sessions', {
     game: Sequelize.STRING,
     date: Sequelize.STRING,
     skill_level: Sequelize.STRING,
-    time: Sequelize.STRING
+    time: Sequelize.STRING,
+    description: Sequelize.STRING
 }, {
     tableName: 'test_sessions', // this will define the table's name
     timestamps: true           // this will deactivate the timestamp columns
@@ -91,7 +93,8 @@ app.post('/users', function(req,res) {
         user_id: gameMobtest_user.user_id,
         first_name: gameMobtest_user.first_name,
         last_name: gameMobtest_user.last_name,
-        console: gameMobtest_user.console
+        console: gameMobtest_user.console,
+        skill_level: gameMobtest_user.skill_level
     })
         .complete(function(err, user) {
             console.log(err);
@@ -115,7 +118,8 @@ app.post('/sessions', function(req,res) {
         game: test_session.game,
         date: test_session.date,
         skill_level: test_session.skill_level,
-        time: test_session.time
+        time: test_session.time,
+        description: test_session.description
     })
         .complete(function(err, user) {
             console.log(err);

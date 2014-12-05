@@ -3,9 +3,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--UI Grid-->
+    <!--<link rel="styleSheet" href="bower_components/angular-ui-grid/ui-grid.css"/>-->
+    <!--<link rel="stylesheet" href="Styles/styles.css">-->
     <title>GamerMob</title>
 </head>
 <body ng-controller="MainController">
@@ -34,6 +36,8 @@
 
 
     </select>
+    <button ng-focus="getListofUsers()">Refresh Users</button>
+
 
 
 
@@ -48,6 +52,10 @@
     <!--BootStrap-->
     <!--<script src="dist/js/bootstrap.min.js"></script>-->
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+    <!--UI Grid-->
+
+    <!--<script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>-->
+
     <script src="public/app/app.js"></script>
     <script src="public/controllers/MainController.js"></script>
     <script src="public/app/mainService.js"></script>

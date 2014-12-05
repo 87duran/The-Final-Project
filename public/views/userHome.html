@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-    <div>
+    <div class="col-lg-4">
         <h3>Welcome back {{selectedUser.user_id}}</h3>
         <br>
         Your console of choice is {{selectedUser.console}}
@@ -12,9 +12,10 @@
         Member Since : {{selectedUser.createdAt | date}}
 
     </div>
-
+    <div class="col-lg-8">
     <form>
-        <div>
+        <div class="row">
+        <div class="col-lg-9">
             <h2>Create a game session for others to join!</h2>
             <h4>What game do you want to play?</h4>
             <select name="SessionGame" ng-model="test_session.game">
@@ -26,11 +27,11 @@
             </select>
             <br>
         </div>
-        <div ng-controller="DateController">
+        <div class="col-md-4" ng-controller="DateController">
             <h4>When do you want to play?</h4>
             <!--<input placeholder="Session Date" name="SessionDate" ng-model="test_session.date">-->
 
-            <div class="col-md-2">
+            <div>
                 <div>
                     <p class="input-group">
                         <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="test_session.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
@@ -42,17 +43,18 @@
             </div>
 
         </div>
-    <br>
-        <h4>What skill level would you prefer to play with?</h4>
+        <div class="col-md-12">
+            <h4>What skill level would you prefer to play with?</h4>
         <select name="SkillLevel" ng-model="test_session.skill_level">
             <option value="Beginner">Beginner</option>
             <option value="Recreational">Recreational</option>
             <option value="Pro">Pro</option>
             <option value="Any">Any</option>
         </select>
-        <br>
+        </div>
+        <div class="col-lg-6">
         <h4>What time do you want to start?</h4>
-        <div ng-controller="TimeController" class="col-md-3">
+        <div ng-controller="TimeController">
 
             <timepicker ng-model="test_session.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
 
@@ -61,12 +63,15 @@
 
 
         </div>
-        <br>
-            <!--<input ng-model="selectedUser.user_id">-->
-            <button type="submit" ng-click="submitSession()">Create your session!</button>
-
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-success btn-lg" type="submit" ng-click="submitSession()">Create your session!</button>
+        </div>
+            </div>
     </form>
+        </div>
             <div class="col-lg-8">
+                <h2>Messenger</h2>
                 <ul id='example-messages' class='example-chat-messages'>
                     <li ng-repeat='msg in messages'>
                         <strong class='example-chat-username'>{{msg.from}}</strong>

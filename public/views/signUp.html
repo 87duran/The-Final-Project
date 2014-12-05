@@ -2,25 +2,37 @@
 <div class="container">
 <form>
 
-    <h4>Choose a profile name</h4>
-    <input placeholder="Profile Name" name="ProfileName" ng-model="gameMobtest_user.user_id">
+    <div>
+        <h4 >Choose a profile name</h4>
+        <input placeholder="Profile Name" name="ProfileName" ng-model="gameMobtest_user.user_id">
+    </div>
+
     <br>
+
+    <div>
     <h4>Your First Name</h4>
     <input placeholder="First Name" name="FirstName" ng-model="gameMobtest_user.first_name">
+    </div>
+
     <br>
+
     <h4>Your Last Name</h4>
     <input placeholder="Last Name" name="LastName" ng-model="gameMobtest_user.last_name">
     <br>
+
     <h4>Your Console of choice</h4>
     <input placeholder="Console" name="Console" ng-model="gameMobtest_user.console">
     <br>
-
-
-
-
+    <h4>What skill level do you think you are?</h4>
+    <select name="SkillLevel" ng-model="gameMobtest_user.skill_level">
+        <option value="Beginner">Beginner</option>
+        <option value="Recreational">Recreational</option>
+        <option value="Pro">Pro</option>
+        <option value="Any">Any</option>
+    </select>
 
     <hr>
-    <button type="submit" ng-click="submitForm()">Submit Profile Info</button>
+    <button class="btn btn-success btn-lg" type="submit" ng-click="submitForm()">Submit Profile Info</button>
     </hr>
 </form>
     </div>
