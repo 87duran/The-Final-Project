@@ -1,87 +1,79 @@
 <div class="container">
     <div class="row">
-    <div class="col-lg-4">
-        <h3>Welcome back {{selectedUser.user_id}}</h3>
-        <br>
-        Your console of choice is {{selectedUser.console}}
-        <br>
-        First Name : {{selectedUser.first_name}}
-        <br>
-        Last Name : {{selectedUser.last_name}}
-        <br>
-        Member Since : {{selectedUser.createdAt | date}}
-
-    </div>
-    <div class="col-lg-8">
-    <form>
-        <div class="row">
-        <div class="col-lg-9">
-            <h2>Create a game session for others to join!</h2>
-            <h4>What game do you want to play?</h4>
-            <select name="SessionGame" ng-model="test_session.game">
-                <option value="Battlefield 4">Battlefield 4</option>
-                <option value="Call of Duty">Call of Duty</option>
-                <option value="Destiny">Destiny</option>
-                <option value="Diablo 3">Diablo 3</option>
-                <option value="PayDay 2">PayDay 2</option>
-            </select>
+        <div class="col-md-4">
+            <h3>Welcome back {{selectedUser.user_id}}</h3>
             <br>
+            Your console of choice is {{selectedUser.console}}
+            <br>
+            First Name : {{selectedUser.first_name}}
+            <br>
+            Last Name : {{selectedUser.last_name}}
+            <br>
+            Member Since : {{selectedUser.createdAt | date}}
         </div>
-        <div class="col-md-4" ng-controller="DateController">
-            <h4>When do you want to play?</h4>
-            <!--<input placeholder="Session Date" name="SessionDate" ng-model="test_session.date">-->
-
-            <div>
-                <div>
-                    <p class="input-group">
-                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="test_session.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-                    </p>
+        <div>
+            <form class="col-md-8">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2>Create a game session for others to join!</h2>
+                        <h4>What game do you want to play?</h4>
+                        <select name="SessionGame" ng-model="test_session.game">
+                            <option value="Battlefield 4">Battlefield 4</option>
+                            <option value="Call of Duty">Call of Duty</option>
+                            <option value="Destiny">Destiny</option>
+                            <option value="Diablo 3">Diablo 3</option>
+                            <option value="PayDay 2">PayDay 2</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" ng-controller="DateController">
+                            <h4>What day do you want to play?</h4>
+                            <!--<input placeholder="Session Date" name="SessionDate" ng-model="test_session.date">-->
+                            <p class="input-group">
+                                <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="test_session.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required="" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h4>What skill level would you prefer to play with?</h4>
+                        <select name="SkillLevel" ng-model="test_session.skill_level">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Recreational">Recreational</option>
+                            <option value="Pro">Pro</option>
+                            <option value="Any">Any</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4>What time do you want to start?</h4>
+                        <div ng-controller="TimeController">
+                            <timepicker ng-model="test_session.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                            <pre class="alert alert-info">The time you picked is {{test_session.time | date:'shortTime' }}</pre>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-success btn-lg" type="submit" ng-click="submitSession()">Create your session!</button>
+                    </div>
                 </div>
-            </div>
-
+            </form>
         </div>
-        <div class="col-md-12">
-            <h4>What skill level would you prefer to play with?</h4>
-        <select name="SkillLevel" ng-model="test_session.skill_level">
-            <option value="Beginner">Beginner</option>
-            <option value="Recreational">Recreational</option>
-            <option value="Pro">Pro</option>
-            <option value="Any">Any</option>
-        </select>
+        <div>
+            <h3>Place a description about your game here</h3>
+            <input ng-model="test_session.description">
         </div>
-        <div class="col-lg-6">
-        <h4>What time do you want to start?</h4>
-        <div ng-controller="TimeController">
-
-            <timepicker ng-model="test_session.time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
-
-            <pre class="alert alert-info">The time you picked is {{test_session.time | date:'shortTime' }}</pre>
-
-
-
+        <div class="col-lg-8">
+            <h2>Messenger</h2>
+            <ul id='example-messages' class='example-chat-messages'>
+                <li ng-repeat='msg in messages'>
+                    <strong class='example-chat-username'>{{msg.from}}</strong>
+                    {{msg.body}}
+                </li>
+            </ul>
+            <footer>
+                <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>
+            </footer>
         </div>
-        </div>
-        <div class="col-lg-12">
-            <button class="btn btn-success btn-lg" type="submit" ng-click="submitSession()">Create your session!</button>
-        </div>
-            </div>
-    </form>
-        </div>
-            <div class="col-lg-8">
-                <h2>Messenger</h2>
-                <ul id='example-messages' class='example-chat-messages'>
-                    <li ng-repeat='msg in messages'>
-                        <strong class='example-chat-username'>{{msg.from}}</strong>
-                        {{msg.body}}
-                    </li>
-                </ul>
-                <footer>
-                    <input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>
-                </footer>
-
-        </div>
-        </div>
+    </div>
 </div>

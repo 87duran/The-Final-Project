@@ -23,4 +23,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'public/views/search.html',
                 controller: 'MainController'
             })
+            .state('developer', {
+                url: '/developer',
+                templateUrl: 'public/views/developer.html',
+                controller: 'MainController'
+            })
 });
