@@ -63,7 +63,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
         }
     }
 
-    
+
 
     //ref.authWithPassword({
     //    email    : "turboPants@yahoo.com",
