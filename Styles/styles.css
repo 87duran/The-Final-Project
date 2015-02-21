@@ -2,17 +2,33 @@
     width: 500px;
     height: 500px;
 }
-.full {
+
+.full-1 {
     background: url('http://i.i.cbsi.com/cnwk.1d/i/tim/2013/03/26/close_1920x1080.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
+.full-dev {
+    background: url('../public/Images/2014-11-destiny_wallpaper_high_resolution.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 .jumbotron {
-    opacity: .9;
+    opacity: .8;
 }
 
 .navbar {
     background-color: #222222;
 }
+.ng-enter{
+    transition: 0.75s;
+    opacity: 0;
+}
+.ng-enter-active{
+    opacity: 1;
+}
+

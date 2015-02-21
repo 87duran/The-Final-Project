@@ -1,18 +1,21 @@
 var app = angular.module('GameMob');
 
 app.controller('MainController', function($scope, $firebase, mainService) {
-   $scope.gameMobtest_users = [];
-   $scope.getListofUsers = function() {
-      mainService.getListofUsers().then(function(data) {
-         $scope.gameMobtest_users = data.data;
-      })
-   };
+
+    //get list of GameMob Users
+
+    $scope.gameMobtest_users = [];
+    $scope.getListofUsers = function() {
+        mainService.getListofUsers().then(function(data) {
+            $scope.gameMobtest_users = data.data;
+        })
+    };
 
    $scope.getListofUsers();
 
+    $scope.test = 'this test is working';
 
-
-   $scope.test = 'this test is working';
+    //submit Form for adding a new user
 
     $scope.submitForm = function() {
       mainService.addNewUser($scope.gameMobtest_user, function(data) {
@@ -21,7 +24,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
    };
 
 
-
+    //get list of gaming sessions
    $scope.test_sessions = [];
    $scope.getListofsessions = function() {
       mainService.getListofsessions().then(function(data) {
@@ -31,7 +34,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
 
    $scope.getListofsessions();
 
-
+    //add a gaming session
     $scope.submitSession = function() {
       mainService.addNewSession($scope.test_session, function(data) {
           console.log("i'm here");
