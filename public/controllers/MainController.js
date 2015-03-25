@@ -29,6 +29,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
    $scope.getListofsessions = function() {
       mainService.getListofsessions().then(function(data) {
          $scope.test_sessions = data.data;
+          $scope.myData = data.data;
       })
    };
 
@@ -65,6 +66,7 @@ app.controller('MainController', function($scope, $firebase, mainService) {
             $scope.msg = "";
         }
     }
+
 
 
 

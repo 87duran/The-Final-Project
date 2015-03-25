@@ -1,8 +1,7 @@
-<h3>Search for Sessions</h3>
-
-
-        <div>
-            Search by Date, Game, Start Time or Skill Level Here: <input ng-model="search">
+<div class="container-fluid">
+    <h3>Search for Sessions</h3>
+    <div>
+        Search by Date, Game, Start Time or Skill Level Here: <input ng-model="search">
             <div>
                 <table class="table table-striped">
                     <tr class="success">
@@ -20,4 +19,10 @@
                 </table>
             </div>
         </div>
+    <div ng-controller="gridController">
+        <div ui-grid="{ data: myData }" class="myGrid"></div>
+    </div>
+
+</div>
+
 

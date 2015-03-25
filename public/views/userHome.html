@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container font-white">
     <div class="row">
         <div class="col-md-4">
             <h3>Welcome back {{selectedUser.user_id}}</h3>
@@ -12,9 +12,8 @@
             Member Since : {{selectedUser.createdAt | date}}
         </div>
         </div>
-        <div>
-            <form class="col-md-8">
-                <div class="row">
+            <div class="row">
+                <form class="col-md-8"></form>
                     <div class="col-md-9">
                         <h2>Create a game session for others to join!</h2>
                         <h4>What game do you want to play?</h4>
@@ -59,7 +58,6 @@
                     </div>
                 </div>
             </form>
-        </div>
         <div>
             <h3>Place a description about your game here</h3>
             <input ng-model="test_session.description">

@@ -1,6 +1,6 @@
-.grid {
-    width: 500px;
-    height: 500px;
+.myGrid {
+    width: 70%;
+    height: 15%;
 }
 
 .full-1 {
@@ -18,16 +18,28 @@
     -o-background-size: cover;
 }
 .jumbotron {
-    opacity: .9;
+    opacity: .8;
 }
 
-.nav {
+.navbar-default  {
     background-color: #222222;
+    border: 0px ;
+    border-bottom-color: transparent;
 }
+.myNav a:focus, {
+    background-color: #f5f5f5;
+}
+
 .ng-enter{
     transition: 0.75s;
     opacity: 0;
 }
 .ng-enter-active{
     opacity: 1;
+}
+.font-white{
+    color:#ffffff;
+}
+.hvr-shutter-out-vertical {
+    background: #222222;
 }

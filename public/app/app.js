@@ -1,4 +1,4 @@
-var app = angular.module('GameMob', ['ui.router', 'firebase', 'ui.bootstrap', 'ngAnimate']);
+var app = angular.module('GameMob', ['ui.router', 'firebase', 'ui.bootstrap', 'ngAnimate', 'ui.grid']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
