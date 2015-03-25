@@ -4,7 +4,7 @@
 }
 
 .full-1 {
-    background: url('http://i.i.cbsi.com/cnwk.1d/i/tim/2013/03/26/close_1920x1080.jpg') no-repeat center center fixed;
+    background-color: #54565C;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -18,10 +18,10 @@
     -o-background-size: cover;
 }
 .jumbotron {
-    opacity: .8;
+    opacity: .9;
 }
 
-.navbar {
+.nav {
     background-color: #222222;
 }
 .ng-enter{
@@ -31,4 +31,3 @@
 .ng-enter-active{
     opacity: 1;
 }
-
