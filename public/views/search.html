@@ -1,27 +1,31 @@
 <div class="container-fluid">
-    <h3>Search for Sessions</h3>
+    <h3 class="font-white   ">Search for Sessions</h3>
     <div>
         Search by Date, Game, Start Time or Skill Level Here: <input ng-model="search">
-            <div>
-                <table class="table table-striped">
-                    <tr class="success">
-                        <th>Date of Session</th>
-                        <th> Game</th>
-                        <th> Start Time</th>
-                        <th> Skill Level</th>
-                    </tr>
-                    <tr ng-repeat='session in test_sessions | filter:search'>
-                        <td>{{session.date | date: 'shortDate'}}</td>
-                        <td>{{session.game}}</td>
-                        <td>{{session.time | date: 'shortTime'}}</td>
-                        <td>{{session.skill_level}}</td>
-                    </tr>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date of Session</th>
+                            <th> Game</th>
+                            <th> Start Time</th>
+                            <th> Skill Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat='session in test_sessions | filter:search'>
+                            <td>{{session.date | date: 'shortDate'}}</td>
+                            <td>{{session.game}}</td>
+                            <td>{{session.time | date: 'shortTime'}}</td>
+                            <td>{{session.skill_level}}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-    <div ng-controller="gridController">
-        <div ui-grid="{ data: myData }" class="myGrid"></div>
-    </div>
+    <!--<div ng-controller="gridController">-->
+        <!--<div ui-grid="{ data: myData }" class="myGrid"></div>-->
+    <!--</div>-->
 
 </div>
 

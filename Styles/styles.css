@@ -37,9 +37,15 @@
 .ng-enter-active{
     opacity: 1;
 }
+
 .font-white{
     color:#ffffff;
 }
 .hvr-shutter-out-vertical {
     background: #222222;
+}
+.table {
+    background-color: #f5f5f5;
+    color: #0f0f0f;
+    opacity: .8;
 }
