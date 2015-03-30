@@ -7,7 +7,6 @@ sessions according to the above parameters.  The main goal is making it easy to 
 play through games that require teams of several people and have no matchmaking or games that require teammates that 
 communicate.  
 
-This app is using HTML and CSS with Bootstrap as the main CSS framework.  The main framework for the JavaScript is Angular.js.  
-Angular is using several modules including uiRouter, ngAnimate and uiBootstrap.  The backend is comprised of a node.js server
+This app is using HTML and CSS with Bootstrap as the main CSS framework.  The main framework for the JavaScript is Angular.js Angular is using several modules including uiRouter, ngAnimate and uiBootstrap.  The backend is comprised of a node.js server
 using the Express and Sequelize modules.  The database for my session data is PostgreSQL and I have messenger that is using
 Firebase.  
