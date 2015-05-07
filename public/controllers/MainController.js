@@ -1,6 +1,6 @@
 var app = angular.module('GameMob');
 
-app.controller('MainController', '$scope', function($scope, $firebase, mainService) {
+app.controller('MainController', function($scope, $firebase, mainService) {
 
     //get list of GameMob Users
 
