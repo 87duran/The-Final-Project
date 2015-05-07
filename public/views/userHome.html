@@ -1,4 +1,5 @@
-<div class="container font-white">
+<div class="container well">
+
     <!--<div class="row">-->
         <!--<div class="col-md-4">-->
             <!--<h3>Welcome back {{selectedUser.user_id}}</h3>-->
@@ -12,9 +13,9 @@
             <!--Member Since : {{selectedUser.createdAt | date}}-->
         <!--</div>-->
         <!--</div>-->
-    <form>
+    <form class="form-inline">
+        <h2>Create a game session for others to join!</h2>
         <div class='form-group'>
-            <h2>Create a game session for others to join!</h2>
             <label>What game do you want to play?</label>
             <select name="SessionGame" ng-model="test_session.game">
                 <option value="Battlefield 4">Battlefield 4</option>
@@ -30,14 +31,13 @@
                 <option value="Pro">Pro</option>
                 <option value="Any">Any</option>
             </select>
-            <button class="btn btn-success btn-lg" type="submit" ng-click="submitSession()">Create your session!</button>
-
         </div>
-    </form>
         <div>
             <h3>Place a description about your game here</h3>
             <input ng-model="test_session.description">
         </div>
+        <button class="btn btn-success btn-lg" type="submit" ng-click="submitSession()">Create your session!</button>
+    </form>
         <!--<div class="col-lg-8">-->
             <!--<h2>GamerMob Messenger</h2>-->
             <!--<ul id='example-messages' class='example-chat-messages'>-->
@@ -50,4 +50,5 @@
                 <!--<input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
             <!--</footer>-->
         <!--</div>-->
-</div>
+
+    </div>

@@ -14,6 +14,12 @@ app.set('port', (process.env.PORT || 5000));
 
 var pg = require('pg');
 
+var Sequelize = require('sequelize')
+    , sequelize = new Sequelize('d88t3mqmdb28f1', 'groqrvjslptfvy', 'n1DqeU3ip_nEiHRUL6NxWRSoxk', {
+        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
+        port:    5432
+    });
+
 //pg.connect(process.env.DATABASE_URL, function(err, client) {
 //    var query = client.query('SELECT * FROM gamemobtest_users');
 //
@@ -34,11 +40,7 @@ app.get('/db', function (request, response) {
     });
 })
 
-var Sequelize = require('sequelize')
-    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
-        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
-        port:    5432
-    });
+
 
 sequelize
     .authenticate()

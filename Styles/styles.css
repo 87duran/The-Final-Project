@@ -17,18 +17,18 @@
     background-size: cover;
     -o-background-size: cover;
 }
-.jumbotron {
+.jumbotron-light{
     opacity: .8;
 }
 
-.navbar-default  {
-    background-color: #222222;
-    border: 0px ;
-    border-bottom-color: transparent;
-}
-.myNav a:focus, {
-    background-color: #f5f5f5;
-}
+/*.navbar-default  {*/
+    /*background-color: #222222;*/
+    /*border: 0px ;*/
+    /*border-bottom-color: transparent;*/
+/*}*/
+/*.myNav a:focus, {*/
+    /*background-color: #f5f5f5;*/
+/*}*/
 
 .ng-enter{
     transition: 0.75s;
@@ -47,5 +47,12 @@
 .table {
     background-color: #f5f5f5;
     color: #0f0f0f;
+    opacity: .8;
+}
+.form-inline{
+    opacity: .8;
+}
+.background-white {
+    background-color: #ffffff;
     opacity: .8;
 }
