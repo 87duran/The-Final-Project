@@ -15,7 +15,7 @@ app.set('port', (process.env.PORT || 5000));
 var pg = require('pg');
 
 var Sequelize = require('sequelize')
-    , sequelize = new Sequelize('d88t3mqmdb28f1', 'groqrvjslptfvy', 'n1DqeU3ip_nEiHRUL6NxWRSoxk', {
+    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
         dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
         port:    5432
     });
