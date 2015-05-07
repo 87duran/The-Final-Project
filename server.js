@@ -13,13 +13,14 @@ app.get('/', function(req, res) {
 app.set('port', (process.env.PORT || 5000));
 
 var pg = require('pg');
-
-var Sequelize = require('sequelize')
-    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
-        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
-        port:    5432
-    });
-
+//
+//var Sequelize = require('sequelize')
+//    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
+//        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
+//        port:    5432
+//    });
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('postgres://groqrvjslptfvy:n1DqeU3ip_nEiHRUL6NxWRSoxk@ec2-50-19-219-80.compute-1.amazonaws.com:5432/d88t3mqmdb28f1')
 //pg.connect(process.env.DATABASE_URL, function(err, client) {
 //    var query = client.query('SELECT * FROM gamemobtest_users');
 //
