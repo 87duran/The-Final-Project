@@ -20,11 +20,14 @@ app.set('port', (process.env.PORT || 5000));
 
 var pg = require('pg');
 
-var Sequelize = require('sequelize')
-    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
-        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
-        port:    5432
-    });
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('postgres://user:pass@example.com:5432/dbname');
+
+//var Sequelize = require('sequelize')
+//    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
+//        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
+//        port:    5432
+//    });
 
 //pg.connect(process.env.DATABASE_URL, function(err, client) {
 //    var query = client.query('SELECT * FROM gamemobtest_users');
