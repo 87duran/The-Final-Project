@@ -2,6 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var cors = require('cors');
+var https = require('https');
+var fs = require('fs');
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
@@ -10,6 +13,10 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+var options = {
+    pfx: fs.readFileSync('server.pfx')
+};
 
 
 app.get('/', function(req, res) {
@@ -147,8 +154,7 @@ app.post('/sessions', function(req,res) {
             });
         });
 });
-
-app.listen(app.get('port'), function() {
+https.createServer(options, app).listen(app.get('port'), function() {
     console.log("Node app is running at localhost:" + app.get('port'));
 });
 
