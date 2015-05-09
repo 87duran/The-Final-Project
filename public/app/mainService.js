@@ -4,13 +4,13 @@ app.service('mainService', function($http) {
     this.getListofUsers = function() {
         return $http({
             method: 'GET',
-            url: '//localhost:5000/users'
+            url: 'http://localhost:5000/users'
         })
     }
 
     this.addNewUser = function(gameMobtest_user, callback) {
         console.log('new user function')
-        return $http.post('//localhost:5000/users', {gameMobtest_user: gameMobtest_user})
+        return $http.post('http://localhost:5000/users', {gameMobtest_user: gameMobtest_user})
         .success(function(data, status, headers, config){
             console.log(data);
             callback(data);
@@ -23,7 +23,7 @@ app.service('mainService', function($http) {
     this.getListofsessions = function() {
         return $http({
             method: 'GET',
-            url: 'http://localhost:5000/sessions'
+            url: 'http://localhost:5000/sessions' || '//groqrvjslptfvy:n1DqeU3ip_nEiHRUL6NxWRSoxk@ec2-50-19-219-80.compute-1.amazonaws.com:5432/d88t3mqmdb28f1/db'
         })
     }
 
