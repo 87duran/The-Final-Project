@@ -13,11 +13,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-var options = {
-    key: fs.readFileSync('server-key.pem'),
-    cert: fs.readFileSync('server-crt.pem')
-};
-
 app.get('/', function(req, res) {
     res.sendFile('/index.html',  { root: __dirname })
 });
@@ -154,13 +149,10 @@ app.post('/sessions', function(req,res) {
         });
 });
 
-//app.listen(app.get('port'), function() {
-//    console.log("Node app is running at localhost:" + app.get('port'));
-//});
+app.listen(app.get('port'), function() {
+    console.log("Node app is running at localhost:" + app.get('port'));
+});
 
-https.createServer(options, function (req, res) {
-    res.writeHead(200);
-    res.end("hello world\n");
-}).listen(8000);
+
 
 //app.listen(3000);
