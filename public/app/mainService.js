@@ -4,13 +4,13 @@ app.service('mainService', function($http) {
     this.getListofUsers = function() {
         return $http({
             method: 'GET',
-            url: 'http://localhost:5000/users'
+            url: '/users'
         })
     }
 
     this.addNewUser = function(gameMobtest_user, callback) {
         console.log('new user function')
-        return $http.post('http://localhost:5000/users', {gameMobtest_user: gameMobtest_user})
+        return $http.post('/users', {gameMobtest_user: gameMobtest_user})
         .success(function(data, status, headers, config){
             console.log(data);
             callback(data);
