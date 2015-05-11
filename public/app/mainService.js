@@ -6,7 +6,7 @@ app.service('mainService', function($http) {
             method: 'GET',
             url: '/users'
         })
-    }
+    };
 
     this.addNewUser = function(gameMobtest_user, callback) {
         console.log('new user function')
@@ -18,14 +18,14 @@ app.service('mainService', function($http) {
             .error(function(data, status, headers, config) {
                 console.log(status);
             })
-    }
+    };
 
     this.getListofsessions = function() {
         return $http({
             method: 'GET',
             url: 'sessions'
         })
-    }
+    };
 
     this.addNewSession = function(test_session, callback) {
         console.log('new session function');
@@ -39,4 +39,4 @@ app.service('mainService', function($http) {
             })
     }
 
-})
+});
