@@ -23,7 +23,7 @@ app.service('mainService', function($http) {
     this.getListofsessions = function() {
         return $http({
             method: 'GET',
-            url: 'http://localhost:5000/sessions' || '//groqrvjslptfvy:n1DqeU3ip_nEiHRUL6NxWRSoxk@ec2-50-19-219-80.compute-1.amazonaws.com:5432/d88t3mqmdb28f1/db'
+            url: 'sessions'
         })
     }
 
