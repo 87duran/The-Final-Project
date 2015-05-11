@@ -2,16 +2,16 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var cors = require('cors');
-var https = require('https');
-var fs = require('fs');
+//var https = require('https');
+//var fs = require('fs');
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+//app.use(function(req, res, next) {
+//    res.header("Access-Control-Allow-Origin", "*");
+//    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//    next();
+//});
 
 app.get('/', function(req, res) {
     res.sendFile('/index.html',  { root: __dirname })
