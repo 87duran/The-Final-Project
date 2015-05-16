@@ -24,6 +24,30 @@
                 <option value="Diablo 3">Diablo 3</option>
                 <option value="PayDay 2">PayDay 2</option>
             </select>
+            <div class="row">
+                    <h4>Date of Session</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="input-group">
+                                <input type="text" class="form-control" datepicker-popup="shortDate" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2020-12-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--<div class="col-md-6">-->
+                    <!--<p class="input-group">-->
+                        <!--<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="test_session.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />-->
+              <!--<span class="input-group-btn">-->
+                <!--<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>-->
+              <!--</span>-->
+                    <!--</p>-->
+                <!--</div>-->
             <h4>What skill level would you prefer to play with?</h4>
             <select name="SkillLevel" ng-model="test_session.skill_level">
                 <option value="Beginner">Beginner</option>

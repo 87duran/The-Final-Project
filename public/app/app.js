@@ -1,4 +1,4 @@
-var app = angular.module('GameMob', ['ui.router', 'firebase', 'ui.bootstrap', 'ngAnimate', 'ui.grid']);
+var app = angular.module('GameMob', ['ui.router', 'ui.bootstrap', 'firebase', 'ngAnimate']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -16,12 +16,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             .state('userHome', {
                 url: '/userHome',
                 templateUrl: 'public/views/userHome.html',
-                controller: 'MainController'
+                controller: 'DateController'
             })
             .state('search', {
                 url: '/search',
                 templateUrl: 'public/views/search.html',
-                controller: 'MainController'
+                controller: 'searchController'
             })
             .state('developer', {
                 url: '/developer',
