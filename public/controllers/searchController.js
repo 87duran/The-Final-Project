@@ -8,6 +8,7 @@ app.controller('searchController', function($scope, mainService){
         mainService.getListofsessions().then(function(data) {
             $scope.test_sessions = data.data;
             $scope.myData = data.data;
+            console.log(data.data);
         })
     };
 

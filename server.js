@@ -21,14 +21,14 @@ app.set('port', (process.env.PORT || 5000));
 
 var pg = require('pg');
 
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('postgres://groqrvjslptfvy:n1DqeU3ip_nEiHRUL6NxWRSoxk@ec2-50-19-219-80.compute-1.amazonaws.com:5432/d88t3mqmdb28f1');
+//var Sequelize = require('sequelize');
+//var sequelize = new Sequelize('postgres://groqrvjslptfvy:n1DqeU3ip_nEiHRUL6NxWRSoxk@ec2-50-19-219-80.compute-1.amazonaws.com:5432/d88t3mqmdb28f1');
 
-//var Sequelize = require('sequelize')
-//    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
-//        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
-//        port:    5432
-//    });
+var Sequelize = require('sequelize')
+    , sequelize = new Sequelize('test', 'cduran87', 'postgres', {
+        dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
+        port:    5432
+    });
 
 //pg.connect(process.env.DATABASE_URL, function(err, client) {
 //    var query = client.query('SELECT * FROM gamemobtest_users');
@@ -81,7 +81,8 @@ var Session = sequelize.define('test_sessions', {
     date: Sequelize.STRING,
     skill_level: Sequelize.STRING,
     time: Sequelize.STRING,
-    description: Sequelize.STRING
+    description: Sequelize.STRING,
+    console: Sequelize.STRING
 }, {
     tableName: 'test_sessions', // this will define the table's name
     timestamps: true           // this will deactivate the timestamp columns
@@ -139,7 +140,8 @@ app.post('/sessions', function(req,res) {
         date: test_session.date,
         skill_level: test_session.skill_level,
         time: test_session.time,
-        description: test_session.description
+        description: test_session.description,
+        console: test_session.console
     })
         .complete(function(err, user) {
             console.log(err);

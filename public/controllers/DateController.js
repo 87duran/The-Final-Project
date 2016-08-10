@@ -42,7 +42,36 @@ app.controller('DateController', function ($scope, mainService) {
         return '';
     };
 
-    $scope.test_session.date = $scope.dt;
+    $scope.mytime = new Date();
+
+    $scope.hstep = 1;
+    $scope.mstep = 1;
+
+
+
+    $scope.ismeridian = true;
+    $scope.toggleMode = function() {
+        $scope.ismeridian = ! $scope.ismeridian;
+    };
+
+    $scope.update = function() {
+        var d = new Date();
+        d.setHours( 14 );
+        d.setMinutes( 0 );
+        $scope.test_session.time = d;
+        return d;
+    };
+
+    $scope.changed = function () {
+        console.log('Time changed to: ' + $scope.test_session.time);
+    };
+
+    $scope.clear = function() {
+        $scope.test_session.time = null;
+    };
+
+    $scope.test_session.date = $scope.d;
+
     //add a gaming session
     $scope.submitSession = function() {
         mainService.addNewSession($scope.test_session, function(data) {
@@ -51,4 +80,6 @@ app.controller('DateController', function ($scope, mainService) {
 
         })
     };
+
+
 });

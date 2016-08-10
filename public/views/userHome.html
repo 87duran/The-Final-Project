@@ -1,18 +1,5 @@
 <div class="container well">
 
-    <!--<div class="row">-->
-        <!--<div class="col-md-4">-->
-            <!--<h3>Welcome back {{selectedUser.user_id}}</h3>-->
-            <!--<br>-->
-            <!--Your console of choice is {{selectedUser.console}}-->
-            <!--<br>-->
-            <!--First Name : {{selectedUser.first_name}}-->
-            <!--<br>-->
-            <!--Last Name : {{selectedUser.last_name}}-->
-            <!--<br>-->
-            <!--Member Since : {{selectedUser.createdAt | date}}-->
-        <!--</div>-->
-        <!--</div>-->
     <form class="form-inline">
         <h2>Create a game session for others to join!</h2>
         <div class='form-group'>
@@ -24,30 +11,22 @@
                 <option value="Diablo 3">Diablo 3</option>
                 <option value="PayDay 2">PayDay 2</option>
             </select>
+            <h4>Date of Session</h4>
             <div class="row">
-                    <h4>Date of Session</h4>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <p class="input-group">
-                                <input type="text" class="form-control" datepicker-popup="shortDate" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2020-12-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-                            </p>
-                        </div>
-                    </div>
-
+                <div class="col-md-6">
+                    <p class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="shortDate" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2020-12-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
                 </div>
+            </div>
+            <h4>Time of Session</h4>
+            <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
 
+            <hr>
 
-                <!--<div class="col-md-6">-->
-                    <!--<p class="input-group">-->
-                        <!--<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="test_session.date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />-->
-              <!--<span class="input-group-btn">-->
-                <!--<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>-->
-              <!--</span>-->
-                    <!--</p>-->
-                <!--</div>-->
             <h4>What skill level would you prefer to play with?</h4>
             <select name="SkillLevel" ng-model="test_session.skill_level">
                 <option value="Beginner">Beginner</option>
@@ -74,5 +53,18 @@
                 <!--<input ng-model='msg' ng-keydown="addMessage($event)" type='text' id='messageInput'  placeholder='Type a message...'>-->
             <!--</footer>-->
         <!--</div>-->
+    <!--<div class="row">-->
+    <!--<div class="col-md-4">-->
+    <!--<h3>Welcome back {{selectedUser.user_id}}</h3>-->
+    <!--<br>-->
+    <!--Your console of choice is {{selectedUser.console}}-->
+    <!--<br>-->
+    <!--First Name : {{selectedUser.first_name}}-->
+    <!--<br>-->
+    <!--Last Name : {{selectedUser.last_name}}-->
+    <!--<br>-->
+    <!--Member Since : {{selectedUser.createdAt | date}}-->
+    <!--</div>-->
+    <!--</div>-->
 
     </div>
