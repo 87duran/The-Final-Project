@@ -81,7 +81,8 @@ var Session = sequelize.define('test_sessions', {
     date: Sequelize.STRING,
     skill_level: Sequelize.STRING,
     time: Sequelize.STRING,
-    description: Sequelize.STRING
+    description: Sequelize.STRING,
+    console: Sequelize.STRING
 }, {
     tableName: 'test_sessions', // this will define the table's name
     timestamps: true           // this will deactivate the timestamp columns
@@ -139,7 +140,8 @@ app.post('/sessions', function(req,res) {
         date: test_session.date,
         skill_level: test_session.skill_level,
         time: test_session.time,
-        description: test_session.description
+        description: test_session.description,
+        console: test_session.console
     })
         .complete(function(err, user) {
             console.log(err);
